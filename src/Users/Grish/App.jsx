@@ -27,6 +27,7 @@ export default function App() {
         <p className="count count_three ">{CountThree}</p>
       </div>
 
+
       <div className="App__button">
         <button className="btn button__changeOne" onClick={changeCountOne}>One</button>
         <button className="btn button__changeTwo" onClick={changeCountTwo}>Two</button>
