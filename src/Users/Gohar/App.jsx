@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import classNames from "classnames"
-import axios from "axios";
+import axios from "./axios";
 import Users from "./Component/Users/Users";
 import "./App.scss"
+import Todos from "./Component/Todos/Todos";
+import Posts from "./Component/Posts/Posts";
 const arr = ['users', 'posts', 'todos']
 
 export default function App() {
@@ -12,7 +14,7 @@ export default function App() {
 	useEffect(() => {
 		if (currenIndex !== null) {
 			const target = arr[currenIndex];
-			axios(`https://jsonplaceholder.typicode.com/${target}`, {
+			axios(`${target}`, {
 				params: {
 					_limit: 10
 				}
@@ -22,6 +24,18 @@ export default function App() {
 		}
 	}, [currenIndex])
 
+
+	const renderData = () => {
+		switch (currenIndex) {
+			case 0:
+				return <Users users={data} />
+			case 1:
+				return <Posts posts={data} />
+			case 2:
+				return <Todos todos={data} />
+			default: return [];
+		}
+	}
 
 	return (
 		<div className="App">
@@ -42,13 +56,7 @@ export default function App() {
 				}
 			</div>
 			<div className="App-content">
-				<pre>
-					{JSON.stringify(data, null, 1)}
-					 {/* <Users users={data}/> 
-					 <Todos todos={data}/> 
-					 <Posts posts={data}/>  */}
-				</pre>
-				
+				{renderData()}
 			</div>
 		</div>
 	)
