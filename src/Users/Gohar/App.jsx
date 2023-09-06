@@ -1,11 +1,55 @@
-import { useState } from 'react'
+import { useState, useEffect } from "react"
+import classNames from "classnames"
+import axios from "axios";
+import Users from "./Component/Users/Users";
+import "./App.scss"
+const arr = ['users', 'posts', 'todos']
 
 export default function App() {
-	const [count, setCount] = useState(0)
+	const [currenIndex, setCurrenIndex] = useState(null);
+	const [data, setData] = useState([])
+
+	useEffect(() => {
+		if (currenIndex !== null) {
+			const target = arr[currenIndex];
+			axios(`https://jsonplaceholder.typicode.com/${target}`, {
+				params: {
+					_limit: 10
+				}
+			})
+				.then(res => setData(res.data))
+				.catch(err => console.log(err))
+		}
+	}, [currenIndex])
+
+
 	return (
-		<div>
-			<h1>Lorem ipsum dolor sit. {count}</h1>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, laudantium alias qui nemo commodi fuga? Impedit natus quisquam, accusamus, mollitia nesciunt id eos ipsam veritatis iste voluptatum, expedita voluptate eveniet.</p>
+		<div className="App">
+			<h1>Axios example</h1>
+			<div className="App-buttons">
+				{
+					arr.map((elem, index) => {
+						return <button
+							key={elem}
+							className={classNames('btn', {
+								active: currenIndex === index,
+							})}
+							onClick={() => setCurrenIndex(index)}
+						>
+							{elem}
+						</button>
+					})
+				}
+			</div>
+			<div className="App-content">
+				<pre>
+					{JSON.stringify(data, null, 1)}
+					 {/* <Users users={data}/> 
+					 <Todos todos={data}/> 
+					 <Posts posts={data}/>  */}
+				</pre>
+				
+			</div>
 		</div>
 	)
 }
