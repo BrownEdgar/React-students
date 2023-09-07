@@ -15,6 +15,12 @@ export default function UseContext() {
     " Aram",
     " hayk",
     " levon",
+    " John",
+    " David",
+    " Michael",
+    " Richard",
+    " William",
+
   ]);
 
   const sortData = () => {
