@@ -26,18 +26,17 @@ export default function App() {
 
 
       <div className="App__button">
-			
-				{
-					Object.keys(count).map(key => {
-						return <button 
-						key={key}
-						className="btn button__changeOne" 
-							onClick={() => changeCount(key)}
-						>
-							{key}
-						</button>
-					})
-				}
+		{
+			Object.keys(count).map(key => {
+				return <button 
+				key={key}
+				className="btn button__changeOne" 
+					onClick={() => changeCount(key)}
+				>
+					{key}
+				</button>
+			})
+		}
       </div>
     </div>
   );
