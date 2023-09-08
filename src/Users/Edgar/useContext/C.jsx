@@ -7,7 +7,8 @@ export default function C() {
 	return (
 		<div>
 			<h3>Component C</h3>
-			<p>{patet}</p>
+			<p>{patet.word}</p>
+			<button onClick={patet.capitalize}>change word</button>
 		</div>
 	)
 }
