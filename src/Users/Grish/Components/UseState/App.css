@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+   border: none;
+   text-align: center;
+   display: flex;   
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+
+
+.App__item{ 
+    border: none;
+ }
+ 
+.App__btnAddPrice{
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border: 1px dashed;
+    background: none;
+    border-radius: 20px;
+    background-color: rgb(29, 180, 140);
+    font-size: 16px;
+    font-family:monospace;
+    font-weight: 700;
+}
+
+.item{
+    border: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+.App__item_btnDelete{
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    cursor: pointer;
+    background: none;
+    font-weight: 700;
+}
+
