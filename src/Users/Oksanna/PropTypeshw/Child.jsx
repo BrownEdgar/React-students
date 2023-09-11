@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Child({ data }) {
   return (
     <div>
-      \{data.map(user => (
+      {data.map(user => (
         <div key={user.id}>
           <h3>First name: {user.first_name}</h3>
           <h3>Last name: {user.last_name}</h3>
