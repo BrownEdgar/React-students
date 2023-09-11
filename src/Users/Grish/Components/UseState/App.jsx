@@ -35,13 +35,20 @@ export default function App() {
   };
 
   const addPrice = () => {
-    let res = data.map((elem) => ({
-      ...elem,
-      price: elem.name !== "🍔" ? elem.price + 4 : elem.price,
-    }));
+    let res = data.map((elem) => {
+      return (elem.name === "🍔") ? elem : { ...elem, price: elem.price + 4 }
+    });
     setData(res);
   };
 
+  const getTotal = () => {
+    const total = data.reduce((acc, cv) => {
+      acc += cv.price * cv.amount;
+      return acc
+    }, 0)
+    console.log(`total: `, total)
+  }
+  getTotal()
   return (
     <div className="App">
       <button className="btn App__btnAddPrice" onClick={addPrice}>
