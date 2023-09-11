@@ -1,19 +1,16 @@
 import React from 'react'
 
-export default function Todos({ todos }) {
+export default function Todos({ todos, changeCount }) {
 
-	return (
-		<div>
-			{
-			todos.map((todo) => {
-				return (
-					<div key={todo.id}>
-						<h1>{todo.title}</h1>
-					</div>
-				)
-			})
-			}
-		</div>
+  return (
+    <div>
 
-	)
+      <div >
+        <h1>{todos.title}</h1>
+        <button onClick={changeCount}>add count</button>
+      </div>
+
+    </div>
+
+  )
 }

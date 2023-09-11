@@ -6,16 +6,16 @@ export const MyContext = React.createContext('')
 export default function App() {
 
   const [names, setNames] = useState([
-    " Ani ",
-    " Mariam ",
-    " Gayane ",
-    " Anahit ",
-    " Lusine ",
-    " Meri ",
-    " Gohar ",
-    " Oksana ",
-    " Tatev ",
-    " Nare "
+    "Ani ",
+    "Mariam ",
+    "Gayane ",
+    "Anahit ",
+    "Lusine ",
+    "Meri ",
+    "Gohar ",
+    "Oksana ",
+    "Tatev ",
+    "Nare "
 
   ])
   const sortNames = () => {
