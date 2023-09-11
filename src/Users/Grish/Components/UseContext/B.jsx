@@ -1,4 +1,4 @@
-import { MyContext } from "./UseContext"
+import { MyContext } from "./App"
 import {useContext} from "react"
 
 
