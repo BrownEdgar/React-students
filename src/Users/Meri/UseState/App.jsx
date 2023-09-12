@@ -34,7 +34,11 @@ export default function App() {
   }
 
   const addPrice = () => {
-
+    const res = foods.reduce((acc, cv) => {
+      acc += cv.amount * cv.price
+      return acc;
+    },0)
+    console.log(res);
   }
 
   return (
