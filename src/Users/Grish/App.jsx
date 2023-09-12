@@ -11,7 +11,7 @@ export default function App() {
 	)
 
   const changeCount = (option) => {
-		setCount({ ...count, [option]: count[option] + 1})
+	setCount({ ...count, [option]: count[option] + 1})
   }
 
 
