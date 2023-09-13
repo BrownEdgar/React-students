@@ -33,14 +33,7 @@ export default function App() {
         const result = food.concat().filter(e => e.id !== id)
         setFood(result)
     }
-//     const addPrice = (id) => {
-//         if (food.name === '🍔') {
-//             food.price += 4;
-//           }
-          
-     
- 
-//   }
+
 
   return (
     <div>
