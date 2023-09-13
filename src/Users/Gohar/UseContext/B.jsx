@@ -7,7 +7,7 @@ export default function B() {
   return (
     <div>
       <h3>Component B</h3>
-      <p>{patet.names}</p>
+      <p>{patet.names.join('-')}</p>
       <button onClick={patet.sortNames}>Sort Names</button>
     </div>
   )

@@ -16,16 +16,14 @@ export default function App() {
     " Joseph ",
     " Ian ",
     " Paul "
-
   ])
+
   const sortPeople = () => {
     const sortPeople = [...people];
     sortPeople.sort((a, b) => a.localeCompare(b));
     setPeople(sortPeople);
-
-
-
   }
+
   return (
     <div>
       <h1>People</h1>

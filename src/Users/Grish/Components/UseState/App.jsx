@@ -1,6 +1,8 @@
 import { useState } from "react";
+import Modal from "./Modal/Modal";
 
-import "./App.css"
+import "./App.css";
+
 export default function App() {
   const [data, setData] = useState([
     {
@@ -26,20 +28,32 @@ export default function App() {
       name: "🍵",
       price: 5,
       amount: 9,
-    }
+    },
   ]);
 
-  const delById = (id) => {
-    let result = data.concat().filter((elem) => elem.id !== id);
+  const [deletingId, setDeletingId] = useState(null);
+
+  const delById = () => {
+    let result = data.filter((elem) => elem.id !== deletingId);
     setData(result);
+  };
+  
+  const closeModal = () => {
+    setDeletingId(null);
   };
 
   const addPrice = () => {
-    let res = data.map((elem) => ({
-      ...elem,
-      price: elem.name !== "🍔" ? elem.price + 4 : elem.price,
-    }));
+    let res = data.map((elem) => {
+      return elem.name === "🍔" ? elem : { ...elem, price: elem.price + 4 };
+    });
     setData(res);
+  };
+
+  const getTotal = () => {
+    const total = data.reduce((acc, cv) => {
+      acc += cv.price * cv.amount;
+      return acc;
+    }, 0);
   };
 
   return (
@@ -47,20 +61,27 @@ export default function App() {
       <button className="btn App__btnAddPrice" onClick={addPrice}>
         Add price 4$
       </button>
-      {data.map((user) => {
-        return (
-          <div className="App__item" key={user.id}>
-            <button
-              className="btn App__item_btnDelete"
-              onClick={() => delById(user.id)}>
-              &#10006;
-            </button>
-            <h2 className="item App__item__name">Name: {user.name}</h2>
-            <p className="item App__item__price">Price: {user.price}</p>
-            <p className="item App__item__amount">Amount: {user.amount}</p>
-          </div>
-        );
-      })}
+      <div className="App__items">
+        {data.map((user) => {
+          return (
+            <div className="App__item" key={user.id}>
+              <button
+                className="btn App__item_btnDelete"
+                onClick={() => setDeletingId(user.id)}>
+                &#10006;
+              </button>
+
+              <h2 className="item App__item__name">{user.name}</h2>
+              <div>
+                <p className="item App__item__price">Price: {user.price}</p>
+                <p className="item App__item__amount">Amount: {user.amount}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {deletingId !== null && (
+        <Modal delById={delById} onClose={closeModal} />)}
     </div>
   );
 }
