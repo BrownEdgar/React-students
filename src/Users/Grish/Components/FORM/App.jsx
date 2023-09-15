@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Country from "./Country/Country";
 
-import France from "../../../../../src/assets/france.jpeg";
-import Canada from "../../../../../src/assets/canada.jpeg";
-import Georgia from "../../../../../src/assets/georgia.jpeg";
+import France from "./assets/france.jpeg";
+
+import Georgia from "./assets/georgia.jpeg";
 import Italy from "../../../../../src/assets/italy.jpeg";
 import Spain from "../../../../../src/assets/spain.jpeg";
 
@@ -21,7 +21,7 @@ export default function App() {
     {
       id: 2,
       name: "canada",
-      img: Canada,
+      img: './images/canada.jpeg',
       description:
         "The history of Canada covers the period from the arrival of the Paleo-Indians to North America thousands of years ago to the present day. The lands encompassing present-day Canada have been inhabited for millennia by Indigenous peoples, with distinct trade networks, spiritual beliefs, and styles of social organization.",
     },
