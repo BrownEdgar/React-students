@@ -1,35 +1,31 @@
 import { useState, useEffect } from "react";
 import classNames from "classnames";
-import axios from "./Component/axios";
-import Users from "./Component/Users/Users";
-import Posts from "./Component/Posts/Posts";
-import Todos from "./Component/Todos/Todos";
+import axios from "axios";
+import Users from "./Users/Users";
+import Posts from "./Posts/Posts";
+import Todos from "./Todos/Todos";
 import "./Axios.scss";
 
 const arr = ["users", "posts", "todos"];
 
 export default function App() {
-  const [currenIndex, setCurrenIndex] = useState(null);
+  const [currenIndex, setCurrenIndex] = useState(2);
   const [data, setData] = useState([]);
 
-  const [count, setCount] = useState(0)
-
-  const changeCount=()=>{
-    setCount(count+1)
+  const [count, setCount] = useState(1)
+  console.log(data)
+  const changeCount = () => {
+    setCount(count + 1)
   }
 
   useEffect(() => {
     if (currenIndex !== null) {
       const target = arr[currenIndex];
-      axios(`${target}`, {
-        params: {
-          _limit: target === Todos ? count : 10,
-        }   
-      })
+      axios(`https://jsonplaceholder.typicode.com/${target}/${count}`,)
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
     }
-  }, [currenIndex,count]);
+  }, [currenIndex, count]);
 
   const renderData = () => {
     switch (currenIndex) {
@@ -38,7 +34,7 @@ export default function App() {
       case 1:
         return <Posts posts={data} />;
       case 2:
-        return <Todos todos={data} onClick={changeCount()} />;
+        return <Todos todos={data} onClick={changeCount} />;
       default:
         return [];
     }
@@ -61,7 +57,9 @@ export default function App() {
           );
         })}
       </div>
-      <div className="App-content">{renderData()}</div>
+      <div className="App-content">
+        {renderData()}
+      </div>
     </div>
   );
 }
