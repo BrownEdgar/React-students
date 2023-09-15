@@ -57,6 +57,7 @@ export default function App() {
         <h1>{message}</h1>
         <form className='App-form'>
             <select name="cities" id="cities" className='App-select' onChange={handleChange}>
+                <option value="" selected disabled></option>
                 <option value="Tokyo">Tokyo</option>
                 <option value="Kyoto">Kyoto</option>
                 <option value="Hong Kong">Hong Kong</option>
