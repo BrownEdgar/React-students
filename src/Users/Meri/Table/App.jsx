@@ -19,7 +19,6 @@ export default function App() {
         setData(result)
     }
 
-
     const genderCount = () => {
         const femaleCount = data.filter((e) => e.gender === 'Female').length;
         const maleCount = data.filter((e) => e.gender === 'Male').length;
