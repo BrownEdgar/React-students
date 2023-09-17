@@ -1,0 +1,27 @@
+.contanier{
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+    form{
+        width: 340px;
+        border: 2px solid teal;
+        border-radius: 12px;
+        padding: 12px;
+        height: 200px;
+        margin: 0 auto;
+        input,
+        button{
+            padding: 12px;
+            width: 90%;
+            margin: 10px auto 4px;
+        }
+        .error{
+            text-align: left;
+            color: red;
+            width: 90%;
+            margin: 0 auto;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
