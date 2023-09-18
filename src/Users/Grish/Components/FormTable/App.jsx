@@ -39,13 +39,13 @@ export default function App() {
         </thead>
         <tbody>
           <tr className="controlPanel">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
           </tr>
           {users.map((user) => (
             <tr
