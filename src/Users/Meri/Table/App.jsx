@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import users from './users.json'
+import {AiOutlineEyeInvisible, AiOutlineEye} from 'react-icons/ai'
 import './App.scss'
 
 export default function App() {
   const [data, setData] = useState(users)
+  const [currentId, setCurrentId] = useState(null)
 
-  const delUser = (id) => {
-    const result = data.filter(e => e.id !== id)
-    setData(result)
-  }
+  // const delUser = (id) => {
+  // const result = data.filter(e => e.id !== id)
+  // setData(result)
+  // }
 
   const sortByName = () => {
     const result = data.toSorted((a, b) => {
@@ -27,6 +29,15 @@ export default function App() {
   };
 
   const { femaleCount, maleCount } = genderCount();
+
+  const showPassword = (id) => {
+    setCurrentId(id)
+  }
+
+  const clearUserId = (e) => {
+    e.stopPropagation()
+    setCurrentId(null)
+  }
 
   return (
     <div className='container'>
@@ -47,13 +58,22 @@ export default function App() {
         {
           data.map(e => {
             return (
-              <tr key={e.id} onClick={() => delUser(e.id)}>
+              <tr key={e.id}>
                 <td>{e.first_name}</td>
                 <td>{e.last_name}</td>
                 <td>{e.email}</td>
                 <td>{e.gender}</td>
                 <td>{e.ip_address}</td>
-                <td>{e.password}</td>
+                <td className='password'>
+                  {currentId == e.id ? e.password : '*'.repeat(10)}
+                  <span onClick={() => showPassword(e.id)}>
+                  {
+                    currentId == e.id 
+                    ? <AiOutlineEye onClick={clearUserId}/>
+                    : <AiOutlineEyeInvisible />
+                  }
+                  </span>
+                </td>
               </tr>
             )
           })

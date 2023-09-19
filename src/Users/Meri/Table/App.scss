@@ -30,7 +30,22 @@
     th {
       border: 2px solid black;
       height: 50px;
-      text-align: center;
+      padding: 10px;
+    }
+
+    td {
+
+      &.password {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg{
+          font-size: 20px;
+          cursor: pointer;
+          color: blue;
+        }
+      }
     }
   }
 }
