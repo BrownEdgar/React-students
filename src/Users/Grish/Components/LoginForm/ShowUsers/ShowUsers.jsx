@@ -26,7 +26,7 @@ export default function ShowUsers({ userData }) {
             {currentId === userData.id ? (
               <AiOutlineEyeInvisible onClick={clearUserId} />
             ) : (
-              <AiOutlineEye onClick={() => clearUserId} />
+              <AiOutlineEye />
             )}
           </span>
         </p>
