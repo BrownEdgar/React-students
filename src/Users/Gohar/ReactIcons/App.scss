@@ -1,20 +1,15 @@
-body{
-    height: 100vh;
-    background-color: #2d2d2d;
-}
 
-.container{
-    width: 70%;
+
+.contanier{
+    width: 60%;
     padding: 40px;
-    // background-color: orange;
     background-color: pink;
     border-radius: 10px;
     margin: 30px auto;
-    outline: 3px dashed beige;
     outline-offset: -8px;
     text-align: center;
 
-    &-list{
+    ul{
         width: 100%;
         margin-top: 20px;
         display: flex;
@@ -23,15 +18,14 @@ body{
         gap: 22px;
 
         li{
-            padding: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: beige;
+            background-color: white;
             border-radius: 20px;
             width: 100px;
             height: 100px;
-            ;
+            
             svg{
                 font-size: 35px;
                 color: rgba($color: rgb(76, 167, 219), $alpha: 0.8);
