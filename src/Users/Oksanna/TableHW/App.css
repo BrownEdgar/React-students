@@ -1,0 +1,23 @@
+.gender {
+  width: 150px;
+  margin: 50px 100px;
+}
+.gender .gender-sort {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+table {
+  width: 80vw;
+  margin: 0 auto;
+  border: 1px solid #404040;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #404040;
+  padding: 20px;
+}/*# sourceMappingURL=App.css.map */
