@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import { Formik, Form, Field, ErrorMessage, validateYupSchema } from 'formik';
+import { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
-import {BiLogoFacebook, BiLogoGoogle, BiLogoTwitter} from 'react-icons/bi'
+import { BiLogoFacebook, BiLogoGoogle, BiLogoTwitter } from 'react-icons/bi'
 import './App.scss';
 
 const initialValues = {
@@ -18,7 +18,7 @@ const validationSchema = object({
 export default function App() {
   const [users, setUsers] = useState([])
 
-  const handleSubmit = (values, {resetForm}) => {
+  const handleSubmit = (values, { resetForm }) => {
     const user = {
       id: Date.now(),
       ...values
@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <div className='container'>
-      <Formik 
+      <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
@@ -46,23 +46,23 @@ export default function App() {
                 </div>
                 <div className='form-group'>
                   <label htmlFor="username">Username or Email Address</label>
-                  <Field type='text' name='username' id='username' placeholder='Enter Your Email or Username'/>
-                  <ErrorMessage name='username' component='span' className='error'/>
+                  <Field type='text' name='username' id='username' placeholder='Enter Your Email or Username' />
+                  <ErrorMessage name='username' component='span' className='error' />
                 </div>
                 <div className='form-group'>
                   <label htmlFor="password">Password</label>
-                  <Field type='password' name='password' id='password' placeholder='Enter Password'/>
-                  <ErrorMessage name='password' component='span' className='error'/>
+                  <Field type='password' name='password' id='password' placeholder='Enter Password' />
+                  <ErrorMessage name='password' component='span' className='error' />
                 </div>
                 <div className='form-group'>
-                  <input type="submit" value='Sign In'/>
+                  <input type="submit" value='Sign In' />
                 </div>
                 <div className='form-group'>
                   <p>
-                    <Field type='checkbox' name='keepSignedIn' value='Keep Me Signed In'/> <span>Keep Me Signed In</span>
+                    <Field type='checkbox' name='keepSignedIn' value='Keep Me Signed In' /> <span>Keep Me Signed In</span>
                   </p>
                 </div>
-                <div class="create-line-left">
+                <div className="create-line-left">
                   <hr />
                   <span>
                     Or sign in with
@@ -76,11 +76,11 @@ export default function App() {
                       Facebook
                     </li>
                     <li className='google'>
-                      <BiLogoGoogle/>
+                      <BiLogoGoogle />
                       Google
                     </li>
                     <li className='twitter'>
-                        <BiLogoTwitter/>
+                      <BiLogoTwitter />
                       Twitter
                     </li>
                   </ul>

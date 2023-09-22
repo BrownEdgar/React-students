@@ -20,7 +20,11 @@ ul {
   list-style: none;
 }
 
+<<<<<<< HEAD
 .json{
+=======
+.json {
+>>>>>>> 288457b (useReducer hook first example)
   background-color: #1d1d1d;
   padding: 1em;
   width: 80%;
