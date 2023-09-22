@@ -1,0 +1,148 @@
+@mixin bg-rools($bg-image){
+    background-image: url($bg-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include bg-rools('https://images3.alphacoders.com/132/thumb-1920-1329972.png');
+    
+    .title{
+        text-align: center;
+        margin: 10px auto;
+        padding: 10px;
+
+        p{
+            margin-top: 10px;
+
+            u{
+                color: #1d9bf0;
+            }
+        }
+
+    }
+
+    form{
+        background-color: rgba(255, 255, 255, 0.74);
+        padding: 1em;
+        width: 500px;
+        margin-left: 555px;
+
+        .form-group{
+            margin: 10px auto;
+            color: #000000;
+            font-size: 18px;
+
+            label{
+                font-weight: 700;
+                
+            }
+
+            input{
+                width: 100%;
+                margin: 10px auto;
+                padding: 1em;
+                background-color: #fff;
+                border: 0;
+                color: #000;
+                border: 1px solid rgba(0, 0, 0, 0.801);
+
+                &[type='checkbox']{
+                    width: 30px;
+                }
+
+                &[type='submit']{
+                    font-weight: 700;
+                    background-color: #454d52;
+                    color: #fff;
+                }
+            }
+
+            .error{
+                font-size: 14px;
+                color: #ff0303
+            }
+        }
+    }
+    
+    .create-line-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+
+        hr{
+            width: 150px;
+        }
+    
+        span{
+            right: 100px;
+        }
+
+
+    }
+
+    .icon-list{
+        width: 100%;
+        margin-top: 20px;
+
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 20px;
+
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 140px;
+                padding: 6px;
+
+    
+                svg {
+                  font-size: 20px;
+                }
+
+            }
+
+            .facebook{
+                color: #1877F2;
+                border: 1px solid #1877F2;
+            }
+
+            .google{
+                color: #db4437;
+                border: 1px solid #db4437;
+            }
+
+            .twitter{
+                color: #1d9bf0;
+                border: 1px solid #1d9bf0;
+            }
+        }
+
+        div{
+            width: 100%;
+            margin: 20px auto;
+            padding: 10px;
+
+            p{
+                text-align: center;
+
+                u{
+                    color: #1d9bf0;
+                }
+            }
+        }
+    }
+}
