@@ -630,7 +630,7 @@ export default function reducer(state = initialState, action) {
 const AddKey = (state) => {
   const result = state.map((elem) => ({
     ...elem,
-    key: Math.floor(Math.random() * 9999999),
+    key: Math.floor(Math.random() * 99999999),
   }));
   return result;
 };
@@ -641,18 +641,17 @@ const limitedUsers = (state, limit) => {
 };
 
 const deleteBody = (state) => {
-    const resultBody=state.map(elem=>{
-        const {title,id,userId}=elem
-        return {userId,id,title}
-    }) 
- return resultBody
+  const resultBody = state.map(elem => {
+    delete elem.body;
+    return elem
+  })
+  return resultBody
 };
 
-const deleteAllUsers = (state) => {
-  const resultAllUsers = state.filter((elem) => elem !== elem);
-  return resultAllUsers;
+const deleteAllUsers = () => {
+  return [];
 };
 
 const addNewUser = (state, payload) => {
-return [...state, payload]
+  return [...state, payload]
 };
