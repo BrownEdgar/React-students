@@ -19,3 +19,17 @@ a {
 ul {
   list-style: none;
 }
+
+
+.json {
+  background-color: #1d1d1d;
+  padding: 1em;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 12px;
+  color: beige;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  white-space: pre;
+  overflow:auto;
+}
