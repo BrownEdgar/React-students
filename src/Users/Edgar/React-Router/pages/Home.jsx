@@ -1,10 +1,27 @@
+import React, { useEffect, useRef } from 'react'
 
 export default function Home() {
+  const h1ref = useRef(null); //{current: h1}
+  useEffect(() => {
+    const handleResize = () => {
+      console.log(window.innerWidth)
+
+      h1ref.current.innerText = window.innerWidth;
+
+    }
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      console.log(1111)
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <div>
-      <h1>Home page</h1>
-      <img src="https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3774&q=80" alt="developer" />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iste est quisquam tenetur accusantium asperiores velit earum qui mollitia hic sunt molestias doloremque, vero iure dicta quia eaque, amet cumque assumenda et autem quae dolores? Cupiditate recusandae quisquam quis omnis.</p>
+      <h1 ref={h1ref}>Home pag2322sasa3ße</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore architecto at culpa libero magnam vitae, aliquam incidunt optio in repudiandae quos iste ipsum harum, unde provident dolorum rerum quo placeat eaque amet. Inventore enim, deserunt libero facilis id atque, expedita harum veritatis nostrum ipsam deleniti eius ullam, eum nisi?</p>
+      <button >on click</button>
     </div>
   )
 }

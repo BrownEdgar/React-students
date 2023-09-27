@@ -4,7 +4,6 @@ export default function Blog() {
   return (
     <div>
       <h1>Blog page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iste est quisquam tenetur accusantium asperiores velit earum qui mollitia hic sunt molestias doloremque, vero iure dicta quia eaque, amet cumque assumenda et autem quae dolores? Cupiditate recusandae quisquam quis omnis.</p>
-    </div>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore architecto at culpa libero magnam vitae, aliquam incidunt optio in repudiandae quos iste ipsum harum, unde provident dolorum rerum quo placeat eaque amet. Inventore enim, deserunt libero facilis id atque, expedita harum veritatis nostrum ipsam deleniti eius ullam, eum nisi?</p></div>
   )
 }

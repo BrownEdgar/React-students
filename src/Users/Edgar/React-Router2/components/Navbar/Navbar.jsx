@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import './Navbar.scss'
-import ROUTES from '../../routes'
 
 export default function Navbar() {
   return (
@@ -8,16 +7,13 @@ export default function Navbar() {
       <nav>
         <ul>
           <li>
-            <Link to={ROUTES.HOME}>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to={ROUTES.BLOG}>Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <Link to={ROUTES.ABOUT}>About</Link>
-          </li>
-          <li>
-            <Link to={ROUTES.POSTS}>Posts</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
