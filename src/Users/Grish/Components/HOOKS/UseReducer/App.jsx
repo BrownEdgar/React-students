@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import reducer, { initialState } from "./reducer";
+import {ADD_KEY,ADD_NEW_USER,DELETE_ALL_USERS,LIMITED_USERS,DELETE_BODY} from "./actionTypes"
 import "./App.scss"
 
 export default function App() {
@@ -9,7 +10,7 @@ export default function App() {
       <button
         onClick={() =>
           dispatch({
-            type: "Add-Key",
+            type: ADD_KEY,
           })
         }>
         Add Key
@@ -17,7 +18,7 @@ export default function App() {
       <button
         onClick={() =>
           dispatch({
-            type: "Limited-users",
+            type: LIMITED_USERS,
             payload: { limit: 20 },
           })
         }>
@@ -26,7 +27,7 @@ export default function App() {
       <button
         onClick={() =>
           dispatch({
-            type: "Delete-body",
+            type: DELETE_BODY,
           })
         }>
         Delete body
@@ -34,7 +35,7 @@ export default function App() {
       <button
         onClick={() =>
           dispatch({
-            type: "Delete-all-users",
+            type: DELETE_ALL_USERS,
           })
         }>
         Delete all users
@@ -42,7 +43,7 @@ export default function App() {
       <button
         onClick={() =>
           dispatch({
-            type: "Add-new-user",
+            type: ADD_NEW_USER,
             payload: {
               userId: 10,
               id:12,

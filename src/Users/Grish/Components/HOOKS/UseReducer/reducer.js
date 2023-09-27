@@ -1,3 +1,6 @@
+import { ADD_KEY, ADD_NEW_USER, DELETE_ALL_USERS, DELETE_BODY, LIMITED_USERS } from "./actionTypes";
+
+
 export const initialState = [
   {
     userId: 1,
@@ -611,19 +614,18 @@ export const initialState = [
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "Add-Key":
+    case ADD_KEY:
       return AddKey(state, action);
-    case "Limited-users":
+    case LIMITED_USERS:
       return limitedUsers(state, action.payload.limit);
-    case "Delete-body":
+    case DELETE_BODY:
       return deleteBody(state, action);
-    case "Delete-all-users":
-      return deleteAllUsers(state, action);
-    case "Add-new-user":
+    case DELETE_ALL_USERS:
+      return [];
+    case ADD_NEW_USER:
       return addNewUser(state, action.payload);
 
-    default:
-      break;
+    default: return state
   }
 }
 
@@ -648,10 +650,6 @@ const deleteBody = (state) => {
  return resultBody
 };
 
-const deleteAllUsers = (state) => {
-  const resultAllUsers = state.filter((elem) => elem !== elem);
-  return resultAllUsers;
-};
 
 const addNewUser = (state, payload) => {
 return [...state, payload]
