@@ -20,7 +20,6 @@ ul {
   list-style: none;
 }
 
-
 .json {
   background-color: #1d1d1d;
   padding: 1em;
@@ -31,5 +30,12 @@ ul {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 200;
   white-space: pre;
-  overflow:auto;
+  overflow: auto;
+}
+
+img {
+  width: 430px;
+  height: 120px;
+  object-fit: contain;
+  margin: 20px;
 }
