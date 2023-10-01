@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import App from "./Users/Grish/Components/Menu/App";
+import App from "./App";
 import "./index.css";
 
 
