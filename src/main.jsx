@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import App from "./Users/Edgar/HOOKS/useMemo/App";
+import App from "./Users/Edgar/Debounse_Effect/App";
 import "./index.css";
 
 

@@ -39,3 +39,14 @@ img {
   object-fit: contain;
   margin: 20px;
 }
+
+li {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  border-radius: 6px;
+  border: 1px solid #009879;
+  padding: 12px;
+}
