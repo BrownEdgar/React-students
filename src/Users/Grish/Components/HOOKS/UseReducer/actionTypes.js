@@ -1,5 +1,0 @@
-export const ADD_KEY="ADD_KEY"
-export const LIMITED_USERS="LIMITED_USERS"
-export const DELETE_BODY="DELETE_BODY"
-export const DELETE_ALL_USERS="DELETE_ALL_USERS"
-export const ADD_NEW_USER="ADD_NEW_USER"
