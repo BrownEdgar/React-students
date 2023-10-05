@@ -20,18 +20,3 @@ ul {
   list-style: none;
 }
 
-<<<<<<< HEAD
-.json{
-=======
-.json {
->>>>>>> 288457b (useReducer hook first example)
-  background-color: #1d1d1d;
-  padding: 1em;
-  width: 80%;
-  margin: 20px auto;
-  border-radius: 12px;
-  color: beige;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 200;
-  white-space: pre;
-}
