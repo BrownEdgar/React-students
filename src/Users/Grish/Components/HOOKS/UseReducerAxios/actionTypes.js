@@ -1,0 +1,5 @@
+export const POSTS="POSTS"
+export const ADD_TEXT="ADD_TEXT"
+export const SHUFFLE_ARRAY="SHUFFLE_ARRAY"
+export const DEL_POST="DEL_POST"
+export const ADD_COUNT="ADD_COUNT"
