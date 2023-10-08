@@ -1,0 +1,128 @@
+.Products{
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px auto;
+    text-align: left;
+    padding: 4px;
+    .Products-table{
+        width: 100%;
+        margin: 0px auto;
+        
+        .Products-thead{
+            
+            .Products-columnTitle{
+            .Products-title{
+                color: silver;
+                padding: 10px;
+                
+            }
+        }
+    }
+}
+
+.Products-showItem{
+    width: 100%;
+    .showItem-wrap{
+        vertical-align: top;
+        .showItem-content{
+            padding: 10px;
+            .showItem-product{
+                display: inline-flex;
+                margin: 4px auto;
+                .showItem-img{
+                    object-fit: contain;
+                    padding: 4px;
+                    width: 140px;
+                    height:140px;
+                    background-color: rgb(255, 255, 255);
+                }
+                .showItem-info{
+                    font-size: 18px;
+                    .showItem-prodName{
+                        font-family:'Times New Roman', Times, serif;
+                        line-height: 1.8;
+                        font-weight: 600;
+                        
+                    }
+                    .showItem-discription{
+                        font-weight: 500;
+                        color: rgb(142, 142, 142);
+                        display: flex;
+                        font-size: 16px;
+
+                        .discription-size{
+                        }
+                        .discription-color{
+                            font-weight: 500;
+                            color: rgb(142, 142, 142);
+                            margin-left: 8px;
+                        }
+                    }
+                    .showItem-brandName{
+                        color: silver;
+                        font-size: 14px;
+
+                    }      
+                }
+                
+                
+                
+            }
+        }
+        .showItem-prodCount{
+                text-align: center;
+                border-radius: 4px;
+                select{
+                    width: 60px;
+                    padding: 4px;
+                    option{
+                        padding: 10px;
+                    }
+                }
+            }
+            
+            .showItem-prodPrice{
+                text-align: center;
+                .prodPrice-count{
+
+                }
+                prodPrice-realPrice{
+
+                }
+                
+            
+            }
+            .showItem-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 4px;
+                p{
+                    background-color: transparent;
+                    padding: 4px;
+                    display: flex;
+                    border-radius: 4px;
+                    border: 1px solid silver;
+                    font-size: 24px; 
+                    color: silver;
+                    
+                }
+                button{
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 4px;
+                    outline: none;
+                    margin-left: 8px;
+                    border: 1px solid silver;
+                    padding: 8px;
+                    cursor: pointer;
+                }
+            
+            }
+        }
+    }
+}
+
+      
+
+              
