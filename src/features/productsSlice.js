@@ -159,12 +159,8 @@ const productsSlice = createSlice({
       const product = state.find((prod) => prod.id == action.payload.id);
       product.product_count = parseInt(action.payload.id);
     },
-
-    getCountPrice: (state) => {
-      
-    },
   },
 });
 
-export const { getCount, deleteById, getCountPrice } = productsSlice.actions;
+export const { getCount, deleteById } = productsSlice.actions;
 export default productsSlice.reducer;

@@ -1,7 +1,7 @@
 import {
   deleteById,
   getCount,
-  getCountPrice,
+
 } from "../../features/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AiFillHeart } from "react-icons/ai";
@@ -14,9 +14,9 @@ export default function Products() {
   const dispatch = useDispatch();
   const [iconFix, setIconFix] = useState([]);
 
-  useEffect(() => {
-    dispatch(getCountPrice());
-  }, [products.lenght]);
+  // useEffect(() => {
+  //   dispatch(getCountPrice());
+  // }, [products.lenght]);
 
   const toggleButton = (id) => {
     if (iconFix.includes(id)) {
@@ -81,10 +81,14 @@ export default function Products() {
                   <select
                     value={product.product_count}
                     onChange={(e) => addCountProd(e.target.value, product.id)}
-                    onBlur={() => dispatch(getCountPrice())}>
-                    <option value={product.product_count}>
-                      {product.product_count}
-                    </option>
+                  >
+                    {
+                      new Array(product.product_count).fill().map((_, index) => {
+                        return (
+                          <option value={index + 1} key={index}>{index + 1}</option>
+                        )
+                      })
+                    }
                   </select>
                 </td>
                 <td className="showItem-prodPrice">
