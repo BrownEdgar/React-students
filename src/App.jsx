@@ -1,18 +1,49 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUsersById } from "./features/usersSlice";
-import ShopingCart from './components/ShopingCart/ShopingCart'
+import { getAsyncUsers } from './features/usersSlice';
+import './App.css'
+import MyLoader from './Loaders/UserLaders';
 
 export default function App() {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAsyncUsers('https://jsonplaceholder.typicode.com/users'))
+  }, [])
+
+
+
   return (
-    <div>
-      <h1>hello redux</h1>
-      <pre>{JSON.stringify(users, null, 1)}</pre>
-      <button onClick={() => dispatch(deleteUsersById({ id: 2 }))}>
-        delete user N 2
-      </button>
-      <ShopingCart />
+    <div className='flex'>
+      {
+        users.isPending ? (
+          <>
+            <div className='loader'>
+              <MyLoader />
+            </div>
+            <div className='loader'>
+              <MyLoader />
+            </div>
+            <div className='loader'>
+              <MyLoader />
+            </div>
+          </>
+        )
+          : (
+            <>
+              {
+                users.data.map(user => {
+                  return (
+                    <div key={user.id}>
+                      <h2>{user.name}</h2>
+                      <p>user.email</p>
+                    </div>
+                  )
+                })
+              }
+            </>
+          )
+      }
     </div>
 
   );
