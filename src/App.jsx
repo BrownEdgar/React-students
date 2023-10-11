@@ -9,24 +9,22 @@ export default function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAsyncUsers('https://jsonplaceholder.typicode.com/posts'))
-
-   
   }, [])
-  
+
 
   return (
     <div className='flex'>
-   
-     {
-      users.data.map(user =>{
-        return(
-          <div key={user.id} >
-            <h2>{user.title}</h2>
-            <p>{user.body}</p>
-          </div>
-        )
-      })
-     }
+
+      {
+        users.data.map(user => {
+          return (
+            <div key={user.id} >
+              <h2>{user.title}</h2>
+              <p>{user.body}</p>
+            </div>
+          )
+        })
+      }
     </div>
   )
 }
