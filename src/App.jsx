@@ -10,29 +10,23 @@ export default function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAsyncUsers('https://jsonplaceholder.typicode.com/posts'))
-
-   
   }, [])
-  
-  const handleClick = () =>{
-    dispatch(deletePost({id:1}))
-  }
 
   return (
     <>
     <button onClick={handleClick}>Delete</button>
     <div className='flex'>
-   
-     {
-      users.data.map(user =>{
-        return(
-          <div key={user.id} >
-            <h2>{user.title}</h2>
-            <p>{user.body}</p>
-          </div>
-        )
-      })
-     }
+
+      {
+        users.data.map(user => {
+          return (
+            <div key={user.id} >
+              <h2>{user.title}</h2>
+              <p>{user.body}</p>
+            </div>
+          )
+        })
+      }
     </div>
     </>
   )
