@@ -12,7 +12,6 @@ export default function Posts() {
   }, []);
 
   return(
-
       <div>
         {
             JSON.stringify(posts, null, 1)
