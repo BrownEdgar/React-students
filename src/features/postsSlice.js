@@ -9,8 +9,9 @@ const initialPostValue = {
 export const getAsyncPost = createAsyncThunk(
   "post/getAsyncPost",
   async (postUrl) => {
-    const getPost = await fetch(postUrl);
-    return getPost.data;
+    const response = await fetch(postUrl);
+    const data = await response.json()
+    return data;
 
   }
 );
