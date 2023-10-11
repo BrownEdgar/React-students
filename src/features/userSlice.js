@@ -22,6 +22,14 @@ const usersSlice = createSlice({
     name: "users",
     initialState: initialUsersValue,
     reducers:{
+        deletePost:(state,action)=>{
+            console.log(111);
+                const f = state.data.filter(post => post.id !== payload.id)
+            return {
+                ...state,
+                data: f
+            }
+        }
         
 
     },
@@ -49,4 +57,5 @@ const usersSlice = createSlice({
     }
 })
 export default usersSlice.reducer
+export const {deletePost} = usersSlice.actions
 

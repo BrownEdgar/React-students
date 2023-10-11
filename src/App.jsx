@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAsyncUsers } from './features/userSlice';
+import { deletePost, getAsyncUsers } from './features/userSlice';
 import './App.css'
 
 
 export default function App() {
   const users = useSelector((state) => state.users)
+  console.log(users);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAsyncUsers('https://jsonplaceholder.typicode.com/posts'))
@@ -13,8 +14,13 @@ export default function App() {
    
   }, [])
   
+  const handleClick = () =>{
+    dispatch(deletePost({id:1}))
+  }
 
   return (
+    <>
+    <button onClick={handleClick}>Delete</button>
     <div className='flex'>
    
      {
@@ -28,5 +34,6 @@ export default function App() {
       })
      }
     </div>
+    </>
   )
 }
