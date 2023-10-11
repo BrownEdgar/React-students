@@ -1,18 +1,32 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import Child from './components/Child'
-import { deleteUsersById } from './features/usersSlice'
+import { getAsyncUsers } from './features/userSlice';
+import './App.css'
+
 
 export default function App() {
   const users = useSelector((state) => state.users)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAsyncUsers('https://jsonplaceholder.typicode.com/posts'))
+
+   
+  }, [])
+  
+
   return (
-    <div>
-      <h1>hello redux</h1>
-      <pre>
-        {JSON.stringify(users, null, 1)}
-      </pre>
-      <button onClick={() => dispatch(deleteUsersById({ id: 2 }))}>delete user N 2</button>
-      <Child />
+    <div className='flex'>
+   
+     {
+      users.data.map(user =>{
+        return(
+          <div key={user.id} >
+            <h2>{user.title}</h2>
+            <p>{user.body}</p>
+          </div>
+        )
+      })
+     }
     </div>
   )
 }
