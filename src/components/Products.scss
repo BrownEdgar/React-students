@@ -1,0 +1,79 @@
+.Products {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  &-header {
+    padding: 1em;
+    text-transform: uppercase;
+    span {
+      color: grey;
+      margin-bottom: 8px;
+    }
+  }
+  &-flex {
+    width: 96%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+    min-height: 450px;
+    padding: 1em;
+  }
+  &-item {
+    flex-grow: 1;
+    max-width: 25%;
+    position: relative;
+    box-shadow: 0 0 17px 1px rgba($color: #000000, $alpha: 0.2);
+    cursor: pointer;
+    &:hover .Products-info {
+      background-color: #000;
+    }
+    &:hover .Products-triangle {
+      background-color: #000;
+    }
+    &:hover .Products-info {
+      background-color: #000;
+    }
+    &:hover .Products-info > h4 {
+      color: #fff;
+    }
+    &:hover .Products-info > p {
+      color: grey;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 270px;
+    }
+  }
+  &-info {
+    background-color: #fff;
+    text-align: left;
+    padding: 20px 12px 24px 30px;
+    color: grey;
+    h4 {
+      font-weight: 300;
+      text-transform: uppercase;
+      color: rgb(59, 59, 59);
+      margin-bottom: 14px;
+    }
+    p {
+      font-weight: 200;
+      font-size: 13px;
+      color: rgb(25, 24, 24);
+    }
+  }
+  &-triangle {
+    position: absolute;
+    background-color: #ffffff;
+    left: 0;
+    right: 0;
+    top: 175px;
+    width: 100%;
+    z-index: 2;
+    height: 100px;
+    clip-path: polygon(0 88%, 100% 0%, 100% 100%, 0 100%);
+  }
+}
