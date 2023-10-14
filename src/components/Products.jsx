@@ -18,7 +18,6 @@ export default function Products() {
             return (
               <div className="Products-item" key={product.id}>
                 <img src={product.image} alt={product.title} />
-                <div className="Products-triangle"></div>
                 <div className="Products-info">
                   <h4>{product.title}</h4>
                   <p>{product.desc}</p>
