@@ -1,0 +1,43 @@
+.ProductList {
+
+    h1 {
+        font-size: 24px;
+        margin: 20px auto;
+        text-align: center;
+        
+    }
+
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .product {
+
+
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+
+            img {
+              width: 250px;
+            }
+
+            .product-info {
+                h3 {
+                    font-size: 18px;
+                    margin-top: 10px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: rgba(214, 92, 112, 0.867);
+                }
+            }
+        }
+    }
+}
