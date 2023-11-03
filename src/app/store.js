@@ -1,15 +1,11 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import productsSlice from "../features/productsSlice";
+import { configureStore} from "@reduxjs/toolkit";
+import productsReducer from "../features/productsSlice";
+import sweetsReducer from "../features/sweetsSlice";
 
+const store = configureStore({
+  reducer:{
+    sweets:sweetsReducer
+  }
+})
 
-
-  const store = configureStore({
-    reducer:{
-      products:productsSlice,
-        // users:userSlice,
-        // arcive: arciveSlice,
-    }
-  
-  })
-
-  export default store
+export default store

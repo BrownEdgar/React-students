@@ -34,12 +34,12 @@
 
 
 import React from 'react'
-import Products from './components/Products'
+import Sweets from './components/Sweets'
 
 export default function App() {
   return (
     <div className="App">
-  <Products/>
+  <Sweets/>
   </div>
   )
 }
