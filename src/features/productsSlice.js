@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialProductValue = [
   {
     id: 1,
-    countPrice: "",
     product_brand: "A.P.C.",
     product_name: "Cotton Jacket",
     size: "XL",
@@ -15,7 +14,7 @@ const initialProductValue = [
   },
   {
     id: 2,
-    countPrice: "",
+
     product_brand: "A|X Armani Exchange",
     product_name: "Shirt short",
     size: "S",
@@ -27,7 +26,6 @@ const initialProductValue = [
   },
   {
     id: 3,
-    countPrice: "",
     product_brand: "Adidas",
     product_name: "Bag",
     size: "S",
@@ -39,7 +37,7 @@ const initialProductValue = [
   },
   {
     id: 4,
-    countPrice: "",
+
     product_brand: "Adrianna Papell",
     product_name: "Shirt",
     size: "XL",
@@ -51,7 +49,7 @@ const initialProductValue = [
   },
   {
     id: 5,
-    countPrice: "",
+
     product_brand: "Calvin Klein",
     product_name: "Cap",
     size: "L",
@@ -63,7 +61,7 @@ const initialProductValue = [
   },
   {
     id: 6,
-    countPrice: "",
+
     product_brand: "Fendi",
     product_name: "Bag",
     size: "S",
@@ -75,7 +73,7 @@ const initialProductValue = [
   },
   {
     id: 7,
-    countPrice: "",
+
     product_brand: "Nike",
     product_name: "Shoes sport",
     size: 38,
@@ -87,7 +85,7 @@ const initialProductValue = [
   },
   {
     id: 8,
-    countPrice: "",
+
     product_brand: "Champions",
     product_name: "hoodie sweatshirt",
     size: "2XL",
@@ -99,7 +97,7 @@ const initialProductValue = [
   },
   {
     id: 9,
-    countPrice: "",
+
     product_brand: "Gucci",
     product_name: "Polo shirt",
     size: "XS",
@@ -111,7 +109,7 @@ const initialProductValue = [
   },
   {
     id: 10,
-    countPrice: "",
+
     product_brand: "Hermès",
     product_name: "Shirt",
     size: "L",
@@ -123,7 +121,7 @@ const initialProductValue = [
   },
   {
     id: 11,
-    countPrice: "",
+
     product_brand: "Chanel",
     product_name: "Sweatshirts",
     size: "S",
@@ -135,7 +133,7 @@ const initialProductValue = [
   },
   {
     id: 12,
-    countPrice: "",
+
     product_brand: "Louis Vuitton",
     product_name: "Cropped Monogram Puffer Jacket",
     size: "XL",

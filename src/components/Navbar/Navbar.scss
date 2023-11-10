@@ -1,0 +1,38 @@
+header {
+  width: 100%;
+  background-color: #111;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  ul {
+    height: 100%;
+    width: 40%;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      &.cart {
+        a {
+          position: relative;
+          span {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: -10px;
+            top: -10px;
+            border-radius: 50%;
+            background-color: red;
+            font-weight: 500;
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}

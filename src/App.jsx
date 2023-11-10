@@ -1,19 +1,28 @@
-import { useDispatch, useSelector } from "react-redux";
-import { deleteUsersById } from "./features/usersSlice";
-import ShopingCart from './components/ShopingCart/ShopingCart'
+import {
+  RouterProvider,
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route
+} from 'react-router-dom'
+import Products from './components/Products/Products';
+import Layouts from './components/Navbar/Layouts/Layouts';
+import Basket from './components/Basket/Basket';
 
 export default function App() {
-  const users = useSelector((state) => state.users);
-  const dispatch = useDispatch();
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layouts />}>
+        <Route path='/products' element={<Products />} />
+        <Route path='/cart' element={<Basket />} />
+      </Route>
+    )
+  )
   return (
     <div>
-      <h1>hello redux</h1>
-      <pre>{JSON.stringify(users, null, 1)}</pre>
-      <button onClick={() => dispatch(deleteUsersById({ id: 2 }))}>
-        delete user N 2
-      </button>
-      <ShopingCart />
+      <RouterProvider router={router} />
     </div>
 
   );
 }
+
+
